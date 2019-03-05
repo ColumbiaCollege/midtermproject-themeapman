@@ -9,8 +9,9 @@ public class platform {
   float size;
 
   platform() {
-    xp=random(width);
-    yp=random(height);
+    xp=(0);
+    yp=random(height-300);
+    yp+= 300;
 
     speed = random(1, 3);
     pw = random(100, 300);
