@@ -3,7 +3,7 @@
 float xPos =0;
 float yPos =0;
 float pos;
-float accel =.05;
+float accel =.1;
 float speed =1;
 float ballw = 40;
 float ballh = 40;
@@ -26,8 +26,9 @@ void setup() {
 
   noStroke();
   fill(0, 240, 0);
+  //array for platforms
   platforms = new platform[5];
-
+//for loop for platforms
   for (int i = 0; i < platforms.length; i++) {
     platforms[i] = new platform();
   }
@@ -36,7 +37,7 @@ void setup() {
 void draw() 
 {
   background(19, 19, 19);
-
+// draw and move for platforms
   for (int i = 0; i < platforms.length; i++) {
     platform p = platforms[i];
     p.display();
@@ -57,7 +58,7 @@ void draw()
     }
   }
 
-
+// fail condition
   if ( pos >500 && accel >=0 ) {
     speed= 0;
     accel =0;
@@ -68,20 +69,26 @@ void draw()
 
   // update movement
   if (left) {
-    xPos = xPos - 2;
+    xPos = xPos - 4;
   }
   if (right) {
-    xPos = xPos + 2;
+    xPos = xPos + 4 ;
   }
   if ( bounce) {
     pos -= 5;
-    speed= -accel* 100;
+    speed= -accel* 60;
     bounce = false;
   }
   //draw shape
   ellipse(xPos, pos, ballw, ballh);
+  if ( xPos > 740 ) {
+    xPos = - 40;
+  }
+  if (xPos< -40) {
+    xPos = 740;
+  }
 }
-
+//ball movement
 void keyPressed() {
   if (key == 'a') {
     left = true;
