@@ -14,7 +14,7 @@ public class platform {
     yp+= 300;
 
     speed = random(1, 3);
-    pw = random(100, 300);
+    pw = random(100, 200);
     ph = 10;
   }
 
@@ -24,7 +24,7 @@ public class platform {
   }
 
   void move() {
-    accel=0.001;
+    accel=0.005;
     speed= speed +accel;
     xp= xp+speed;
     if ( xp>width) {

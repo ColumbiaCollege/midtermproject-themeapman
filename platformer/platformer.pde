@@ -25,7 +25,7 @@ void setup() {
   yPos = height/2;
 
   noStroke();
-  fill(0, 240, 0);
+
   //array for platforms
   platforms = new platform[5];
 //for loop for platforms
@@ -63,6 +63,7 @@ void draw()
     speed= 0;
     accel =0;
     bounce = false;
+    fill(#FC1703);
     textSize(100);
     text("game over", width-600, height/2);
   }
@@ -80,7 +81,9 @@ void draw()
     bounce = false;
   }
   //draw shape
+  fill (#031DFC);
   ellipse(xPos, pos, ballw, ballh);
+  fill(0,255,0);
   if ( xPos > 740 ) {
     xPos = - 40;
   }
