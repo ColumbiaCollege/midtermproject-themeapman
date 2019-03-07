@@ -3,7 +3,7 @@
 float xPos =0;
 float yPos =0;
 float pos;
-float accel =.1;
+float accel =.2;
 float speed =1;
 float ballw = 40;
 float ballh = 40;
@@ -77,7 +77,7 @@ void draw()
   }
   if ( bounce) {
     pos -= 5;
-    speed= -accel* 60;
+    speed= -accel* 40;
     bounce = false;
   }
   //draw shape

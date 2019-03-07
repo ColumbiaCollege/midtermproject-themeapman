@@ -14,7 +14,7 @@ public class platform {
     yp+= 300;
 
     speed = random(1, 3);
-    pw = random(100, 200);
+    pw = random(100, 250);
     ph = 10;
   }
 
